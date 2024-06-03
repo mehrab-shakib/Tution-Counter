@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuition Attendance Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Tuition Attendance</h1>
+        <h3 id="currentMonth"></h3> 
+        <form id="studentForm">
+            <input type="text" id="studentName" placeholder="Enter student name" required>
+            <button type="submit">Add Student</button>
+        </form>
+        <div id="studentsList"></div>
+        <button class="reset-button" id="resetButton">Reeset Count</button>
+    </div>
+
+    <!-- Modal for displaying dates -->
+    <div id="dateModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Date Log</h2>
+            <table id="dateTable">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
