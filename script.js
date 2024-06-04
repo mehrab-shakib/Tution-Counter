@@ -28,6 +28,7 @@ document.getElementById('currentMonth').textContent = `Current Month: ${currentM
     function addStudentToList(studentName, count) {
         const studentDiv = document.createElement('div');
         studentDiv.className = 'student';
+        studentDiv.dataset.studentName = studentName;
         studentDiv.innerHTML = `
             <div class="student-header">
                 <span class="student-name">${studentName}</span>
@@ -83,10 +84,16 @@ document.getElementById('currentMonth').textContent = `Current Month: ${currentM
         }
     }
 
+    // window.deleteStudent = (studentName) => {
+    //     delete students[studentName];
+    //     updateLocalStorage();
+    //     document.getElementById(`count-${studentName}`).parentElement.parentElement.remove();
+    // }
     window.deleteStudent = (studentName) => {
         delete students[studentName];
         updateLocalStorage();
-        document.getElementById(`count-${studentName}`).parentElement.parentElement.remove();
+        const studentDiv = document.querySelector(`.student[data-student-name="${studentName}"]`);
+        studentDiv.remove();
     }
 
     function updateLocalStorage() {
